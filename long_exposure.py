@@ -31,9 +31,9 @@ while True:
         bAvg=B
         gAvg=G
     else:
-        rAvg = ((totalFrameOfVideo * rAvg) + (1 * R)) / (totalFrameOfVideo + 1.0)
-        gAvg = ((totalFrameOfVideo * gAvg) + (1 * G)) / (totalFrameOfVideo + 1.0)
-        bAvg = ((totalFrameOfVideo * bAvg) + (1 * B)) / (totalFrameOfVideo + 1.0)
+        rAvg = ((totalFrameOfVideo * rAvg) + (1 * R)) / (totalFrameOfVideo + 0.99999)
+        gAvg = ((totalFrameOfVideo * gAvg) + (1 * G)) / (totalFrameOfVideo + 0.99999)
+        bAvg = ((totalFrameOfVideo * bAvg) + (1 * B)) / (totalFrameOfVideo + 0.99999)
     totalFrameOfVideo+=1
 print('Frame height: '+str(len(rAvg)))
 print('Frame width: '+str(len(rAvg[0])))
