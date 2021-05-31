@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt
-
+from scipy.interpolate import UnivariateSpline
 from os import listdir
 from os.path import isfile, join
 
@@ -19,20 +19,25 @@ def changeRGBValue(img, arrValueToChange):
     result=cv2.merge([B, G, R]).astype('float')
     return result
 
-# onlyfiles = [f for f in listdir('./output/test') if isfile(join('./output/test', f))]
-# for i in onlyfiles:
-#     for r in range(1, 10):
-#         for g in range(1, 10):
-#             for b in range(1, 10):
-#                     image = cv2.imread('./output/test/{filename}'.format(filename=i))
-#                     re=changeRGBValue(image, [r*10, g*10, -b*10])
-#                     cv2.imwrite('./output/increseYellow/{r}-{g}-{b}--{file}'.format(r=r*10, g=g*10, b=-b*10, file=i), re)
-# filename = 'IMG_8588#1fr.png'
-# image = cv2.imread('./output/test/{file}'.format(file=filename))
-# image=changeContrastHSV(image)
+def brightnessControl(image, level):
+    return cv2.convertScaleAbs(image, beta=level)
 
-# for r in range(1, 10):
-#     for g in range(1, 10):
-#         for b in range(1, 10):
-#                 re=changeRGBValue(image, [r*10, g*10, -b*10])
-#                 cv2.imwrite('./output/increseYellow/{r}-{g}-{b}-hope.png'.format(r=r*10, g=g*10, b=-b*10), re)
+def spreadLookupTable(x, y):
+    spline = UnivariateSpline(x, y)
+    return spline(range(256))
+
+def warmImage(image):
+    increaseLookupTable = spreadLookupTable([0, 64, 128, 256], [0, 80, 160, 256])
+    decreaseLookupTable = spreadLookupTable([0, 64, 128, 256], [0, 50, 100, 256])
+    red_channel, green_channel, blue_channel = cv2.split(image)
+    red_channel = cv2.LUT(red_channel, increaseLookupTable).astype(np.uint8)
+    blue_channel = cv2.LUT(blue_channel, decreaseLookupTable).astype(np.uint8)
+    return cv2.merge((red_channel, green_channel, blue_channel))
+
+def coldImage(image):
+    increaseLookupTable = spreadLookupTable([0, 64, 128, 256], [0, 80, 160, 256])
+    decreaseLookupTable = spreadLookupTable([0, 64, 128, 256], [0, 50, 100, 256])
+    red_channel, green_channel, blue_channel = cv2.split(image)
+    red_channel = cv2.LUT(red_channel, decreaseLookupTable).astype(np.uint8)
+    blue_channel = cv2.LUT(blue_channel, increaseLookupTable).astype(np.uint8)
+    return cv2.merge((red_channel, green_channel, blue_channel))

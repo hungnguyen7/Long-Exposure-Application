@@ -1,7 +1,7 @@
 # Hỗ trợ viết CLI(Command Line Interface)
 # https://codelungtung.wordpress.com/2017/11/25/command-line-parsing-with-argparse/
 import argparse
-from features import contrast, changeContrast
+from features import changeContrastHSV
 import cv2
 import math
 # Create CLI interface
@@ -21,7 +21,7 @@ print('Frame height: '+str(stream.get(cv2.CAP_PROP_FRAME_HEIGHT)))
 print('Frame width: '+str(stream.get(cv2.CAP_PROP_FRAME_WIDTH)))
 print('FPS: ' + str(int(stream.get(cv2.CAP_PROP_FPS))))
 
-frameRate = 100
+frameRate = 1
 # stream.set(cv2.CAP_PROP_POS_MSEC, 2000)
 #Tính số frame hình trong video
 while True:
@@ -32,8 +32,8 @@ while True:
     # Lấy frame hiện tại
     frameId = stream.get(1)
     # Chia frame thành các thành phần màu cơ bản RGB
-    frame_contrast = changeContrast(frame)
-    (B, G, R)=cv2.split(frame_contrast.astype('float'))
+    frame = changeContrastHSV(frame)
+    (B, G, R)=cv2.split(frame.astype('float'))
     # Khởi tạo nếu (rAvg, gAvg, bAvg)=None
     if frameId % math.floor(frameRate) == 0:
         if rAvg is None:

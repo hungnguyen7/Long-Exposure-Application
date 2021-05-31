@@ -1,1 +1,11 @@
 data
+output
+great
+.vscode
+.idea
+*.png
+*.txt
+*.mp4
+*.MOV
+*.jpg
+*.ini

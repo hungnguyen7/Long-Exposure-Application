@@ -1,4 +1,3 @@
-
 import cv2
 import math
 from features import changeContrastHSV, changeRGBValue
@@ -32,6 +31,6 @@ def longExposure(videoLink, frameRate = 1, hisEqual = False, rgb = []):
             totalFrameOfVideo+=1
     # Hợp nhất các giá trị trung bình RGB với nhau
     avg=cv2.merge([bAvg, gAvg, rAvg]).astype('uint8')
-    cv2.imwrite('./imgOutput/{}#{}fr.png'.format(name, frameRate), avg)
+    cv2.imwrite('./outputImage/{}#{}fr.png'.format(name, frameRate), avg)
     stream.release()
-    return './imgOutput/{}#{}fr.png'.format(name, frameRate)
+    return './outputImage/{}#{}fr.png'.format(name, frameRate)
