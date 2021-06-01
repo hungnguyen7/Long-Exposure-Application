@@ -9,3 +9,6 @@ great
 *.MOV
 *.jpg
 *.ini
+videoUpload
+imageUpload
+outputImage

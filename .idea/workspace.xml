@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9f9e692-d59a-4a47-8d86-5a58fbc1e80b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/NienLuanNganh_LongExposure_B1709536.pptx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NienLuanNganh_LongExposure_B1709536.docx" beforeDir="false" afterPath="$PROJECT_DIR$/NienLuanNganh_LongExposure_B1709536.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extendFeature.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/features.py" beforeDir="false" afterPath="$PROJECT_DIR$/features.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/long_exposure.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/long_exposure_for_streamlit.py" beforeDir="false" afterPath="$PROJECT_DIR$/long_exposure_for_streamlit.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/long_exposure_terminal.py" beforeDir="false" afterPath="$PROJECT_DIR$/long_exposure_terminal.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readPerFrame.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test6.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,6 +91,8 @@
       <workItem from="1621848671608" duration="1463000" />
       <workItem from="1622037810721" duration="609000" />
       <workItem from="1622085258712" duration="2814000" />
+      <workItem from="1622469395359" duration="687000" />
+      <workItem from="1622545441829" duration="2214000" />
     </task>
     <servers />
   </component>

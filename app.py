@@ -1,6 +1,4 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
 import os
 import cv2
 from os.path import isfile, join
@@ -31,7 +29,7 @@ def imageProcessing(image, hisEqual=False, warn=False, cold=False, brightness=0)
     image = cv2.imread(image)
     if hisEqual:
         image = changeContrastHSV(image)
-    if warm:
+    if warn:
         image = warmImage(image)
     if cold:
         image = coldImage(image)
