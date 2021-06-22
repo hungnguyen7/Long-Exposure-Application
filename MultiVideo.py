@@ -13,7 +13,6 @@ def longExposure(videoLink, name, frameRate):
         if not grabbed:
             break
         frameId = stream.get(1)
-        frame = changeContrastHSV(frame)
         # Chia frame thành các thành phần màu cơ bản RGB
         (B, G, R)=cv2.split(frame.astype('float'))
         # Khởi tạo nếu (rAvg, gAvg, bAvg)=None
